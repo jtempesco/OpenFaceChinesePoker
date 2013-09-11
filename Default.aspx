@@ -180,6 +180,18 @@
                 this.score = 0;
             };
 
+            // Add the selected card to a hand
+            var assignCardToHand = function (card, ui) {
+                //console.info(ui.position);
+                //console.info(ui.offset);
+                var initalCards = $(ui.helper).parent("div").attr("class");
+                switch (initalCards) {
+                    case "playerOneStartingCards":
+                        // Depending on the position of the stop, put it in the appropriate level of the hand
+                        break;
+                }
+            };
+
             //Initialize the deck and counters
             var aDeck = new Deck();
             aDeck.createDeck();
@@ -211,7 +223,10 @@
                 aDeck.drawFive('.playerOneStartingCards');
 
                 // Drag the initial cards to their desired locations
-                $(".playerOneStartingCards .card").draggable({ snap: ".cardContainer .card" });
+                $(".playerOneStartingCards .card").draggable({
+                    snap: ".cardContainer .card",
+                    stop: function (e, ui) { assignCardToHand(e, ui); }
+                });
             });
         });
     </script>
