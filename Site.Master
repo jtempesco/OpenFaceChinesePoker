@@ -1,0 +1,16 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApplication1.SiteMaster" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title></title>
+    <link href="/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/scripts/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="/scripts/jquery-ui-1.10.3.custom.min.js"></script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+</body>
+</html>
